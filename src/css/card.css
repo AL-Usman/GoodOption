@@ -1,0 +1,12 @@
+.pay-heading {
+  font-size: 30px;
+  text-align: center;
+}
+
+.pay-card {
+  width: 15%;
+  height: auto;
+}
+.bg-cart {
+  background: #2c5570;
+}

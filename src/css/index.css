@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: ;
+  font-style: normal;
+}
+
+.header {
+  margin: 0 20px;
+}
+.header-btn {
+  height: 30px;
+  width: 70px;
+}
+.flag {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+.sm {
+  width: 30px;
+  height: 30px;
+}
+.footer {
+  background-color: black;
+  color: white;
+  font-size: small;
+}
+a:visited {
+  color: gray;
+}
+.text-right:hover {
+  color: yellow;
+}
+.home-bg {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.home-img {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.home-content {
+  position: absolute;
+  top: 250px;
+  left: 30px;
+  width: 50%;
+  height: 100px;
+  color: aliceblue;
+  font-size: xx-large;
+  font-weight: 700;
+}
+@media only screen and (max-width: 500px) {
+  .home-content {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: 50%;
+    height: 100px;
+    color: aliceblue;
+    font-size: small;
+    font-weight: 400;
+  }
+}
+.cont-card {
+  background-image: url("images/clothes9.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* or contain */
+  background-position: center center;
+}
+.hc {
+  color: aliceblue;
+  font-weight: 700;
+}
+
+div.card-act:hover {
+  background-color: #f0f0f0;
+}
+.card-img {
+  height: 200px;
+}
+
+.text-size {
+  font-size: 10px;
+  color: grey;
+  margin: 0 3px;
+}
+.cart-btn {
+  position: absolute;
+  bottom: 5px;
+  left: 50px;
+}
+.icon-size {
+  width: 30px;
+  height: 50px;
+  color: #3498db;
+}
+.pol-desc {
+  margin-top: -4px;
+  font-size: x-small;
+}
