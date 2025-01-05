@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: "Jost", sans-serif;
   font-optical-sizing: auto;
-  font-weight: ;
+  /* font-weight: ; */
   font-style: normal;
 }
 
@@ -84,7 +84,7 @@ div.card-act:hover {
   background-color: #f0f0f0;
 }
 .card-img {
-  height: 200px;
+  height: 190px;
 }
 
 .text-size {
@@ -96,13 +96,81 @@ div.card-act:hover {
   position: absolute;
   bottom: 5px;
   left: 50px;
+  height: 35px;
 }
 .icon-size {
-  width: 30px;
-  height: 50px;
   color: #3498db;
+  left: 4.2vw;
 }
 .pol-desc {
   margin-top: -4px;
   font-size: x-small;
+}
+.best-seller {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+.fur-head {
+  position: absolute;
+  top: 90px;
+  left: 30%;
+}
+.fur-head-font {
+  font-size: 50px;
+  font-weight: 700;
+  color: #503d2f;
+}
+.fur-head-btn {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  top: 80px;
+  left: 35%;
+  background-color: #d1c8bc;
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.fur-3rd-content {
+  width: 35%;
+  position: absolute;
+  top: 150px;
+  right: 100px;
+}
+.fur-2nd-content {
+  width: 30%;
+  position: absolute;
+  top: 50px;
+  left: 500px;
+}
+.fur-2nd-btn {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  top: 130px;
+  left: 26%;
+  background-color: #d1c8bc;
+  transition: box-shadow 0.4s ease-in-out;
+}
+.fur-3rd-btn {
+  transition: 0.4s ease-in;
+}
+
+.fur-3rd-btn:hover,
+.fur-2nd-btn:hover,
+.fur-head-btn:hover {
+  box-shadow: 0 5px 15px #000000cc;
+}
+.shopName {
+  font-size: 10px;
+  color: #503d2f;
+}
+@media (max-width: 576px) {
+  .slidCard {
+    flex: 0 0 calc(33.33% - 10px); /* 3 items per row */
+    max-width: calc(33.33% - 10px);
+  }
+  .slidCard:nth-child(n + 4) {
+    display: none; /* Hide items beyond the first 3 */
+  }
 }

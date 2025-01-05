@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="footer">
       <footer className="py-4 container-fluid ">
         <div className=" d-flex  ">
-          <div className="col-6 col-md-6 pe-5">
+          <div className="col-6 col-md-6 pe-2 pe-md-5">
             <p>Want to be part of our Good option?</p>
             <p>
               Be the first to receive innovative new product launches,
@@ -47,7 +47,7 @@ const Footer = () => {
               <li className="ms-3"></li>
             </ul>
           </div>
-          <div className=" col-6 col-md-6 mb-3 d-flex flex-wrap ps-5 ">
+          <div className=" col-6 col-md-6 mb-3 d-flex flex-wrap ps-2 ps-md-5 ">
             <div className="px-2 col-6 col-md-4 mb-3">
               <h6>Company</h6>
               <ul className="nav flex-column ">
@@ -140,11 +140,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="d-flex flex-column flex-sm-row justify-content-between  ">
+        <div className="d-flex flex-md-row flex-row justify-content-between  ">
           <div className="col-6 col-md-6 pe-5">
             <p>© 2024 Good Option, Inc. All rights reserved.</p>
           </div>
-          <div className="col-6 col-md-6 mb-3 d-flex flex-wrap ps-5 gap-3">
+          <div className="ps-5 col-6 col-md-6 mb-3 d-flex flex-wrap  gap-3">
             <img
               src="images/indianFlag.png"
               alt="indian flag"

@@ -1,26 +1,68 @@
-import React from "react";
 import { FaCcVisa } from "react-icons/fa";
 import { FaCcMastercard } from "react-icons/fa";
-import { SiAmericanexpress } from "react-icons/si";
 import { useDispatch, useSelector } from "react-redux";
 import { cartAction } from "../store/cartSlice";
 
+interface CartId {
+  sId: number;
+  pId: number;
+}
+interface product {
+  forEach: any;
+  filter: any;
+  id: number;
+  brandName: String;
+  desc: String;
+  image: String;
+  discount: number;
+  MRP: number;
+  price: number;
+  rating: number;
+  bestSelling: false;
+  available: true;
+  shopId: number;
+}
+interface shop {
+  id: number;
+  shopName: String;
+  heading: String;
+  address: String;
+  timing: String;
+  rating: number;
+  products: product;
+}
+
 function CartPayment() {
   const cartIds = useSelector((state: any) => state.cartsSlice);
-  const products = useSelector((state: any) => state.fashionProductSlice);
-  const curItemPresent = products[0].filter((item: any) =>
-    cartIds.includes(item.id)
-  );
+  const sProducts = useSelector((state: any) => state.fashionSlice[0]);
+  const shopProducts = sProducts.shops;
+  //console.log(shopProducts);
+  const filteredShops = shopProducts
+    .map((shop: shop) => {
+      // Filter products based on cartIds
+      const filteredProducts = shop.products.filter((product: product) =>
+        cartIds.some((c: CartId) => c.sId === shop.id && c.pId === product.id)
+      );
+
+      // Return shop data only if it has matching products
+      return filteredProducts.length > 0
+        ? { ...shop, products: filteredProducts }
+        : null;
+    })
+    .filter((shop: shop) => shop !== null);
+
   const CONVENIENCE_FEES = 99;
   const SHIPPING = 50;
   let MRPPrice = 0;
   let discountPrice = 0;
   let total = 0;
   let price = 0;
-  curItemPresent.forEach((item: any) => {
-    MRPPrice += item.MRP;
-    discountPrice += item.MRP - item.price;
-  }); //foreach loop for calculating total price and discount price
+  filteredShops.forEach((shop: shop) =>
+    shop.products.forEach((product: product) => {
+      MRPPrice += product.MRP;
+      discountPrice += product.MRP - product.price;
+    })
+  ); //foreach loop for calculating total price and discount price
   price = MRPPrice - discountPrice;
   if (price > 499) {
     total = price + CONVENIENCE_FEES;

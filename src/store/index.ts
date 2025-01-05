@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import fashionShopSlice from "./fashionShopSlice";
-import fashionProductSlice from "./fashionProducts";
 import cartSlice from "./cartSlice";
+import furnitureSlice from "./furnitureSlice";
+import fashionSlice from "./fashionSlice";
+import electronicsSlice from "./electronicsSlice";
 
 const goodOption = configureStore({
   reducer: {
-    fashionShopsSlice: fashionShopSlice.reducer,
-    fashionProductSlice: fashionProductSlice.reducer,
+    fashionSlice: fashionSlice.reducer,
+    furnitureSlice: furnitureSlice.reducer,
+    electronicsSlice: electronicsSlice.reducer,
     cartsSlice: cartSlice.reducer,
   },
 });

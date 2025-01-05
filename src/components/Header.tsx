@@ -1,6 +1,5 @@
-import React from "react";
 import { CgProfile } from "react-icons/cg";
-import { FaIndianRupeeSign } from "react-icons/fa6";
+import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -10,16 +9,16 @@ const Header = () => {
   return (
     <header className="py-1 text-bg-white position-sticky top-0 bg-white z-3">
       <div className="header ">
-        <div className="d-flex flex-wrap align-items-center justify-content-center   justify-content-lg-start ">
-          <a
+        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-between justify-content-md-start mx-4">
+          <Link
             to="/"
-            className=" d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none "
+            className="  d-flex align-items-center mb-2 mb-lg-0 me-lg-5 text-dark text-decoration-none  "
           >
             <img src="logo/good-option.png" height={40} alt="brand-logo" />
-          </a>
-          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          </Link>
+          <ul className="nav col-12 col-md-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <Link to="/" className="nav-link px-2 text-secondary">
+              <Link to="/" className="nav-link px-2 text-dark">
                 Home
               </Link>
             </li>
@@ -38,32 +37,29 @@ const Header = () => {
                 Electronics
               </Link>
             </li>
+
             <li>
-              <Link to="/automobiles" className="nav-link px-2 text-dark">
-                Automobiles
-              </Link>
-            </li>
-            <li>
-              <Link to="/general-store" className="nav-link px-2 text-dark">
-                General Store
-              </Link>
+              <div className="position-relative">
+                <Link to="/grocery" className="nav-link px-2 text-dark">
+                  Grocery
+                </Link>
+              </div>
             </li>
           </ul>
           <form
-            className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 "
+            className="col-12 col-lg-auto mb-md-5 mb-lg-0 me-lg-3 mb-4 "
             role="search"
           >
             <input
               type="search"
-              className="form-control form-control-dark text-bg-light "
+              className="form-control form-control-dark text-bg-light border rounded-pill "
               placeholder="Search..."
               aria-label="Search"
+              size={35}
             />
           </form>
           <div className="d-flex gap-2 d-md-flex justify-content-md-end">
-            <FaIndianRupeeSign className=" me-md-4" size={25} />
-
-            <CgProfile className="me-md-4" size={25} />
+            <CiHeart className=" me-md-4" size={25} />
             <Link to="/cart">
               <div>
                 <MdOutlineShoppingCart
@@ -74,6 +70,9 @@ const Header = () => {
                   {cart.length}
                 </span>
               </div>
+            </Link>
+            <Link to="/login">
+              <CgProfile className="ms-md-4 ext-dark" size={25} />
             </Link>
           </div>
         </div>

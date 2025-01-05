@@ -1,18 +1,58 @@
 import React from "react";
-import CartItem from "./CartItem";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IoIosArrowBack } from "react-icons/io";
+import CartSummary from "./CartSummary";
+interface CartId {
+  sId: number;
+  pId: number;
+}
+interface product {
+  filter: any;
+  id: number;
+  brandName: String;
+  desc: String;
+  image: String;
+  discount: number;
+  MRP: number;
+  price: number;
+  rating: number;
+  bestSelling: false;
+  available: true;
+  shopId: number;
+}
+interface shop {
+  id: number;
+  shopName: String;
+  heading: String;
+  address: String;
+  timing: String;
+  rating: number;
+  products: product;
+}
 
 function CartItems() {
   const navigate = useNavigate();
   const cartIds = useSelector((store: any) => store.cartsSlice);
-  const products = useSelector((store: any) => store.fashionProductSlice);
-  const curItemPresent = products[0].filter((item: any) =>
-    cartIds.includes(item.id)
-  );
+  const sproducts = useSelector((store: any) => store.fashionSlice);
+  const shopProducts = sproducts[0].shops;
 
-  console.log("current item", curItemPresent);
+  const filteredShops = shopProducts
+    .map((shop: shop) => {
+      // Filter products based on cartIds
+      const filteredProducts = shop.products.filter((product: product) =>
+        cartIds.some((c: CartId) => c.sId === shop.id && c.pId === product.id)
+      );
+
+      // Return shop data only if it has matching products
+      return filteredProducts.length > 0
+        ? { ...shop, products: filteredProducts }
+        : null;
+    })
+    .filter((shop: shop) => shop !== null);
+
+  // console.log("products matched---->", filteredShops);
+
   const handleContinueShopping = () => {
     navigate(-1);
   };
@@ -23,9 +63,7 @@ function CartItems() {
       <hr />
       <div className="card mb-2 border-0">
         <div className="card-body ">
-          {curItemPresent.map((item: any) => (
-            <CartItem key={item.id} item={item} />
-          ))}
+          <CartSummary products={filteredShops} />
         </div>
       </div>
       <div className="d-flex justify-content-start ">
