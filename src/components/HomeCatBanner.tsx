@@ -1,5 +1,3 @@
-import React from "react";
-
 function HomeCatBanner() {
   return (
     <div className="container">

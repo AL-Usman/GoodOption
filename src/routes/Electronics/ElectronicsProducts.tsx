@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Policies from "../../components/Policies";
@@ -7,7 +6,6 @@ import ProductDisplay from "../../components/ProductDisplay";
 
 const ElectronicsProducts = () => {
   const location = useLocation();
-  const shopName = location.state.shopName;
   const shopId = location.state.shopId;
   const eleProducts = useSelector((store: any) => store.fashionSlice[0]);
   console.log("hello", eleProducts);

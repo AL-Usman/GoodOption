@@ -20,8 +20,8 @@ const cartSlice = createSlice({
         (item) => item.sId !== action.payload && item.pId !== action.payload
       );
     },
-    placeOrder(state) {
-      return (state = []);
+    placeOrder(_state) {
+      return [];
     },
   },
 });

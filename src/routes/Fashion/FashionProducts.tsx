@@ -7,7 +7,6 @@ import ProductDisplay from "../../components/ProductDisplay";
 
 const ShopProducts = () => {
   const location = useLocation();
-  const shopName = location.state.shopName;
   const shopId = location.state.shopId;
   const brands = useSelector((store: any) => store.fashionSlice[0]);
   const fashionShop = useSelector((store: any) => store.fashionSlice[0]);

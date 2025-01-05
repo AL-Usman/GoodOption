@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { cartAction } from "../store/cartSlice";
 interface Products {
   map: any;
@@ -29,7 +29,7 @@ const CartSummary: React.FC<Props> = ({ products }) => {
   const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
-  const handleRemoveItem = (sId: number, pId: number) => {
+  const handleRemoveItem = (pId: number) => {
     if (
       window.confirm("Are you sure you want to remove this item from cart?")
     ) {
@@ -75,7 +75,7 @@ const CartSummary: React.FC<Props> = ({ products }) => {
                 <MdDeleteOutline
                   size={20}
                   style={{ width: 20 }}
-                  onClick={() => handleRemoveItem(item.shopId, item.id)}
+                  onClick={() => handleRemoveItem(item.id)}
                 />
               </div>
             </div>

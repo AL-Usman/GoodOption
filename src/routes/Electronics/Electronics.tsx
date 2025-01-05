@@ -1,4 +1,3 @@
-import React from "react";
 import Carousel from "../../components/Carousel";
 import { useSelector } from "react-redux";
 import Brands from "../../components/Brands";

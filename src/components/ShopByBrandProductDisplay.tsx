@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartAction } from "../store/cartSlice";
-import { useLocation } from "react-router-dom";
 interface Products {
   map: any;
   id: number;
