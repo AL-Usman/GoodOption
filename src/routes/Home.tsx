@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const data = useSelector((state: any) => state.fashionSlice[0]);
-  console.log("hello", data.shops[12].products);
+  // console.log("hello", data.shops[12].products);
 
   return (
     <>

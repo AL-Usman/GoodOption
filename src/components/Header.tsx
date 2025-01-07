@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { CgProfile } from "react-icons/cg";
 import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
@@ -7,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const cart = useSelector((state: any) => state.cartsSlice);
-  const navbarRef = useRef<HTMLDivElement>(null);
 
   return (
     <nav className="navbar navbar-expand-md navbar-white bg-light sticky-top">
@@ -36,7 +34,7 @@ const Header = () => {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="navbar-collapse collapse " id="navbarCollapse">
-          <ul className="navbar-nav me-auto mb-2 mb-md-0">
+          <ul className="navbar-nav me-auto mb-2 mb-md-0 gap-md-4">
             <li className="nav-item navbar-collapse">
               <Link to="/" className="nav-link px-2 ">
                 Home

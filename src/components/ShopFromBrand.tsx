@@ -17,7 +17,7 @@ interface Products {
 const ShopFromBrand = () => {
   const location = useLocation();
   const brand = location.state.brandName;
-  console.log(brand);
+  //console.log(brand);
   const product = useSelector((state: any) => state.fashionSlice[0]);
   const shopProducts = product.shops.map((item: any) => {
     return item.products.filter((data: Products) => data.brandName === brand);
