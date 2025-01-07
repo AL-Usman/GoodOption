@@ -4,7 +4,6 @@ import ShopByCatagory from "../components/ShopByCatagoryHome";
 import HomeCatBanner from "../components/HomeCatBanner";
 import ShopByBrand from "../components/ShopByBrandHome";
 import HotDealsProductDisplay from "../components/HotDealsProductDisplay";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   const data = useSelector((state: any) => state.fashionSlice[0]);

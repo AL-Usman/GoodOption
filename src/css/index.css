@@ -69,16 +69,6 @@ a:visited {
     font-weight: 400;
   }
 }
-.cont-card {
-  background-image: url("images/clothes9.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; /* or contain */
-  background-position: center center;
-}
-.hc {
-  color: aliceblue;
-  font-weight: 700;
-}
 
 div.card-act:hover {
   background-color: #f0f0f0;
@@ -189,6 +179,10 @@ div.card-act:hover {
 .product-card img {
   width: 15vw;
 }
+.product-card button {
+  width: 7.5vw;
+}
+
 .display-shop-name {
   position: absolute;
   top: 70%;

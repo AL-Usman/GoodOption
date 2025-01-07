@@ -1,9 +1,13 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartAction } from "../store/cartSlice";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
+interface CartItems {
+  sId: number;
+  pId: number;
+}
 interface Products {
   map: any;
   id: number;
@@ -21,6 +25,8 @@ interface Props {
   products: Products;
 }
 const ProductDisplay: React.FC<Props> = ({ products }) => {
+  const cartItems = useSelector((state: any) => state.cartsSlice);
+  //console.log(cartItems);
   let navigate = useNavigate();
 
   //console.log(products);
@@ -28,8 +34,15 @@ const ProductDisplay: React.FC<Props> = ({ products }) => {
 
   const handleAddToCart = (sId: number, pId: number) => {
     dispatch(cartAction.addToCart({ sId, pId }));
+    alert("Item Added to cart");
+
     //alert("shop id: " + sId + " product id: " + pId);
   };
+  const handleRemoveItem = (pId: number) => {
+    dispatch(cartAction.removeFromCart(pId));
+    alert("Item removed from cart");
+  };
+
   const handleContinueShopping = () => {
     navigate(-1);
   };
@@ -66,14 +79,28 @@ const ProductDisplay: React.FC<Props> = ({ products }) => {
               </span>
               {/* <span className="small">({item.discount}% off)</span> */}
               {item.available ? (
-                <div>
-                  <button
-                    className="btn btn-primary add-to-cart-btn mt-1 rounded-pill "
-                    onClick={() => handleAddToCart(item.shopId, item.id)}
-                  >
-                    Add to cart
-                  </button>
-                </div>
+                cartItems.some(
+                  (cartItem: CartItems) =>
+                    cartItem.sId === item.shopId && cartItem.pId === item.id
+                ) ? (
+                  <div>
+                    <button
+                      className="btn btn-danger add-to-cart-btn mt-4 rounded-pill "
+                      onClick={() => handleRemoveItem(item.id)}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <button
+                      className="btn btn-primary add-to-cart-btn mt-4 rounded-pill "
+                      onClick={() => handleAddToCart(item.shopId, item.id)}
+                    >
+                      Add
+                    </button>
+                  </div>
+                )
               ) : (
                 <div className=" pt-3 text-center text-danger">
                   Out of Stock

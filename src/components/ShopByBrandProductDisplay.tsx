@@ -14,6 +14,10 @@ interface Products {
   bestSelling: boolean;
   available: boolean;
 }
+interface CartItems {
+  sId: number;
+  pId: number;
+}
 interface Props {
   shopProducts: Products;
 }
@@ -22,11 +26,18 @@ const ShopByBrandProductDisplay: React.FC<Props> = ({ shopProducts }) => {
   //console.log("shops", shops);
 
   //console.log(shopProducts);
+  const cartItems = useSelector((state: any) => state.cartsSlice);
   const dispatch = useDispatch();
 
   const handleAddToCart = (sId: number, pId: number) => {
     dispatch(cartAction.addToCart({ sId, pId }));
+    alert("Item Added to cart");
+
     //alert("shop id: " + sId + " product id: " + pId);
+  };
+  const handleRemoveItem = (pId: number) => {
+    dispatch(cartAction.removeFromCart(pId));
+    alert("Item removed from cart");
   };
   return (
     <>
@@ -67,14 +78,30 @@ const ShopByBrandProductDisplay: React.FC<Props> = ({ shopProducts }) => {
                     </span>
                   </span>
                   {item.available ? (
-                    <button
-                      className="btn btn-primary cart-btn mt-1 rounded-pill "
-                      onClick={() => handleAddToCart(item.shopId, item.id)}
-                    >
-                      Add to cart
-                    </button>
+                    cartItems.some(
+                      (cartItem: CartItems) =>
+                        cartItem.sId === item.shopId && cartItem.pId === item.id
+                    ) ? (
+                      <div>
+                        <button
+                          className="btn btn-danger add-to-cart-btn mt-4 rounded-pill "
+                          onClick={() => handleRemoveItem(item.id)}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    ) : (
+                      <div>
+                        <button
+                          className="btn btn-primary add-to-cart-btn mt-4 rounded-pill "
+                          onClick={() => handleAddToCart(item.shopId, item.id)}
+                        >
+                          Add
+                        </button>
+                      </div>
+                    )
                   ) : (
-                    <div className=" pt-4 text-center text-danger">
+                    <div className=" pt-3 text-center text-danger">
                       Out of Stock
                     </div>
                   )}
