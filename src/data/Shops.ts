@@ -312,4 +312,9 @@ export const Shops = {
       image: "images/electronics/collage/5.webp",
     },
   ],
+  homeBanners: [
+    { id: 1, image: "images/home/1a.webp" },
+    { id: 2, image: "images/home/2a.webp" },
+    { id: 3, image: "images/home/3a.webp" },
+  ],
 };

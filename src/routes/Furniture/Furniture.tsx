@@ -9,7 +9,7 @@ function Furniture() {
     <>
       <div className="position-relative">
         <div className="fur-head d-flex justify-content-center flex-column">
-          <p className="fur-head-font">FURNITURE DESIGN</p>
+          <h1 className="fur-head-font">FURNITURE DESIGN</h1>
           <button
             className="fur-head-btn border-0 rounded-pill"
             onClick={handelNavigation}
@@ -21,9 +21,9 @@ function Furniture() {
       </div>
       <div className="position-relative">
         <div className="fur-2nd-content d-flex justify-content-center flex-column">
-          <h2 className="text-center" style={{ color: "#503d2f" }}>
+          <h3 className="text-center" style={{ color: "#503d2f" }}>
             Modren Art
-          </h2>
+          </h3>
           <p className="text-secondary">
             This chair exudes modern elegance with its curved wooden frame,
             plush button-tufted upholstery, sleek angled legs, and blending
@@ -39,18 +39,22 @@ function Furniture() {
         <img className="img-fluid" src="images/furniture/2.webp" alt="" />
       </div>
       <div className="position-relative">
-        <div className="fur-3rd-content">
-          <h2 style={{ color: "#503d2f" }}>Drop Chair</h2>
-          <p className="fst-italic text-secondary">The White Seat Edition</p>
-          <p className="text-secondary">
+        <div className="fur-3rd-content gap-0">
+          <h3 style={{ color: "#503d2f" }}>Drop Chair</h3>
+          <span className="fst-italic text-secondary">
+            The White Seat Edition.
+          </span>
+          <br />
+          <span className="text-secondary">
             Stunning pice of furniture that combines modren design with
             elegance. Its distinctive shape and bright white color make it a
             real eye catcher in room. The chair is not only stylish but also
             comforable and soft.
-          </p>
+          </span>
+          <br className="mb-3" />
           <button
             style={{ backgroundColor: "#d1c8bc" }}
-            className="border-0 rounded-pill px-4 py-2 fur-3rd-btn"
+            className="border-0 rounded-pill px-md-4 px-2 py-md-2 fur-3rd-btn"
             onClick={handelNavigation}
           >
             Learn More

@@ -366,7 +366,7 @@ export const fashionProducts5 = [
     shopId: 5,
   },
   {
-    id: 9,
+    id: 29,
     brandName: "Titan",
     desc: "Titan Analog Silver-White Dial Men's Watch",
     image: "images/fashion/135.webp",
@@ -379,7 +379,7 @@ export const fashionProducts5 = [
     shopId: 5,
   },
   {
-    id: 20,
+    id: 30,
     brandName: "Titan",
     desc: "Titan Neo Analog Silver-Green Dial Men's Watch",
     image: "images/fashion/136.webp",
@@ -393,7 +393,7 @@ export const fashionProducts5 = [
   },
 
   {
-    id: 21,
+    id: 31,
     brandName: "Nike",
     desc: "Nike Men's Running Shoes",
     image: "images/fashion/144.webp",
@@ -407,7 +407,7 @@ export const fashionProducts5 = [
   },
 
   {
-    id: 22,
+    id: 32,
     brandName: "Nike",
     desc: "Nike Free RN 5.0 Men's Training Shoes",
     image: "images/fashion/146.webp",
@@ -420,7 +420,7 @@ export const fashionProducts5 = [
     shopId: 5,
   },
   {
-    id: 23,
+    id: 33,
     brandName: "Nike",
     desc: "Nike Flyknit Men's Running Shoes",
     image: "images/fashion/147.webp",
@@ -433,7 +433,7 @@ export const fashionProducts5 = [
     shopId: 5,
   },
   {
-    id: 24,
+    id: 34,
     brandName: "Nike",
     desc: "Nike Air Force 1 '07 Unisex Sneakers",
     image: "images/fashion/148.webp",
@@ -446,7 +446,7 @@ export const fashionProducts5 = [
     shopId: 5,
   },
   {
-    id: 25,
+    id: 35,
     brandName: "Nike",
     desc: "Nike Men's Running Shoes",
     image: "images/fashion/149.webp",

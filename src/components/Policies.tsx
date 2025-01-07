@@ -26,7 +26,7 @@ const Policies = () => {
         <div className="d-flex flex-column  position-relative">
           <SiMoneygram
             className="position-absolute top-50 translate-middle-y icon-size "
-            size={30}
+            size={25}
           />
           <span className="ps-4 fw-semibold">100% Money Back</span>
           <span className="ps-4 pol-desc">30 days return policy</span>

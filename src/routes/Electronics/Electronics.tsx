@@ -8,6 +8,7 @@ const Electronics = () => {
   console.log("products", electronics);
   const nav = "/electronics-shop-in";
   const type = "electronics";
+
   return (
     <>
       <Carousel banner={electronics.electronicsBanners} />

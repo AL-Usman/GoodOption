@@ -81,7 +81,7 @@ function CartPayment() {
   };
 
   return (
-    <div className="col-4 ">
+    <div className="col-md-4 col-12 mt-2 mt-md-0">
       <div className="card bg-dark text-white rounded-3">
         <div className="card-body">
           <div className="d-flex justify-content-around ">
@@ -114,7 +114,7 @@ function CartPayment() {
               />
             </div>
             <div className="row mb-4">
-              <div className="col-md-6">
+              <div className="col-md-6 mb-3 mb-md-0">
                 <div data-mdb-input-init className="form-outline form-white">
                   <input
                     type="text"

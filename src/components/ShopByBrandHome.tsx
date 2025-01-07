@@ -37,10 +37,7 @@ const ShopByBrand: React.FC = () => {
   return (
     <div className="container">
       <h2>Shop By Brand</h2>
-      <div
-        className="d-flex justify-content-center  align-items-center gap-md-4
-     "
-      >
+      <div className="d-flex justify-content-center  align-items-center gap-md-4 mb-2 mb-md-4">
         <div className="" onClick={handlePrev}>
           <IoIosArrowBack />
         </div>

@@ -57,15 +57,15 @@ function CartItems() {
   };
 
   return (
-    <div className=" col-6 ">
+    <div className=" col-12 col-md-7 ">
       <h3 className="mt-2">Shopping Cart</h3>
       <hr />
       <div className="card mb-2 border-0">
-        <div className="card-body ">
+        <div className=" ">
           <CartSummary products={filteredShops} />
         </div>
       </div>
-      <div className="d-flex justify-content-start ">
+      <div className="d-flex justify-content-md-start justify-content-center ">
         <button
           className=" btn border border-2  rounded-pill "
           onClick={handleContinueShopping}

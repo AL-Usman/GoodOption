@@ -30,27 +30,30 @@ const ShopByBrandProductDisplay: React.FC<Props> = ({ shopProducts }) => {
   };
   return (
     <>
-      <div className="container d-flex flex-wrap gap-5 mb-2 justify-content-evenly">
+      <h3 className=" mb-4 container mt-md-2">Shop By Brand</h3>
+      <div className="container mt-md-3 d-flex flex-wrap  gap-md-5 gap-2 mb-2 justify-content-evenly">
         {shopProducts.map((data: any) =>
           data.map((item: Products) => {
             const shop = shops.find((shop: any) => shop.id === item.shopId);
             return (
               <div
                 key={item.id}
-                className="card position-relative border-0"
-                style={{ width: "12rem", height: "23rem" }}
+                className="card position-relative border-0 product-card"
               >
                 {item.bestSelling && (
                   <span className="badge bg-warning best-seller">
                     Best seller
                   </span>
                 )}
+                <span className="small badge bg-success discount">
+                  {item.discount}%
+                </span>
                 <img
                   src={item.image}
                   className="card-img-top card-img"
                   alt="..."
                 />
-                <div className="card-body mb-0">
+                <div className="card-body mb-0 product-card-body">
                   <h6 className="card-title text-center">{item.brandName}</h6>
                   <p className="small text-wrap mb-0">
                     <span>{item.desc}</span>
@@ -63,10 +66,9 @@ const ShopByBrandProductDisplay: React.FC<Props> = ({ shopProducts }) => {
                       {item.MRP}
                     </span>
                   </span>
-                  <span className="small">({item.discount}% off)</span>
                   {item.available ? (
                     <button
-                      className="btn btn-primary cart-btn mt-0 rounded-pill "
+                      className="btn btn-primary cart-btn mt-1 rounded-pill "
                       onClick={() => handleAddToCart(item.shopId, item.id)}
                     >
                       Add to cart

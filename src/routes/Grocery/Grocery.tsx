@@ -6,7 +6,7 @@ const Grocery: React.FC = () => {
       <img
         src="images/ComingSoonBanner.webp"
         alt=""
-        style={{ width: "100%", height: "545px" }}
+        className="w-100 h-50 h-md-100"
       />
     </div>
   );

@@ -1,29 +1,23 @@
+import { Link } from "react-router-dom";
+
 function HomeCatBanner() {
   return (
     <div className="container">
-      <div className="d-flex justify-content-start gap-4 mb-5">
-        <div
-          className="d-flex justify-content-center align-items-center card mb-4 shadow rounded  border-0"
-          style={{ width: "50%", height: "20rem" }}
-        >
+      <h2>Top Offers</h2>
+
+      <div className="d-flex justify-content-center  gap-4 mb-2 mb-md-4">
+        <div className="d-flex justify-content-center align-items-center card mb-4 shadow rounded  border-0 offer-card">
           <div className="col-12 col-md-12">
-            <img
-              src="images/home/1.webp"
-              className="rounded-2"
-              style={{ width: "100% ", height: "20rem" }}
-            />
+            <Link to="/fashion">
+              <img src="images/home/1.webp" className="rounded-2 offer-card" />
+            </Link>
           </div>
         </div>
-        <div
-          className="d-flex justify-content-center align-items-center card mb-4 shadow rounded  border-0"
-          style={{ width: "50% ", height: "20rem" }}
-        >
+        <div className="d-flex justify-content-center align-items-center card mb-4 shadow rounded  border-0 offer-card">
           <div className="col-12 col-md-12">
-            <img
-              src="images/home/2.webp"
-              className="rounded-2"
-              style={{ width: "100% ", height: "20rem" }}
-            />
+            <Link to="/furiture">
+              <img src="images/home/2.webp" className="rounded-2 offer-card" />
+            </Link>
           </div>
         </div>
       </div>

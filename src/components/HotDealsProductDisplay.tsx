@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { cartAction } from "../store/cartSlice";
-import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
 interface Products {
@@ -20,9 +19,7 @@ interface Products {
 interface Props {
   products: Products;
 }
-const ProductDisplay: React.FC<Props> = ({ products }) => {
-  let navigate = useNavigate();
-
+const HotDealsProductDisplay: React.FC<Props> = ({ products }) => {
   //console.log(products);
   const dispatch = useDispatch();
 
@@ -30,14 +27,10 @@ const ProductDisplay: React.FC<Props> = ({ products }) => {
     dispatch(cartAction.addToCart({ sId, pId }));
     //alert("shop id: " + sId + " product id: " + pId);
   };
-  const handleContinueShopping = () => {
-    navigate(-1);
-  };
+
   return (
     <>
-      <h3 className="text-center mb-4 text-decoration-underline ">
-        WE LOVE TRENDS
-      </h3>
+      <h3 className="container mb-2 mb-md-4 ">Hot Deals</h3>
       <div className="container d-flex flex-wrap gap-md-5 gap-2 mb-2 justify-content-evenly">
         {products.map((item: Products) => (
           <div
@@ -83,17 +76,9 @@ const ProductDisplay: React.FC<Props> = ({ products }) => {
           </div>
         ))}
       </div>
-      <div className=" d-flex justify-content-center mb-2">
-        <button
-          className=" btn border border-2 rounded-pill   "
-          onClick={handleContinueShopping}
-        >
-          <IoIosArrowBack size={20} />
-          Back
-        </button>
-      </div>
+      <div className=" d-flex justify-content-center mb-2"></div>
     </>
   );
 };
 
-export default ProductDisplay;
+export default HotDealsProductDisplay;

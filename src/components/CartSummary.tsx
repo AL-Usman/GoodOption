@@ -26,7 +26,14 @@ interface shop {
 
 const CartSummary: React.FC<Props> = ({ products }) => {
   //console.log("product--->", products);
-  const [qty, setQty] = useState(1);
+  const [qty, setQty] = useState<Record<number, number>>({});
+
+  const handleQuantityChange = (id: number, value: number) => {
+    setQty((prevQuantities) => ({
+      ...prevQuantities,
+      [id]: value,
+    }));
+  };
 
   const dispatch = useDispatch();
   const handleRemoveItem = (pId: number) => {
@@ -40,47 +47,56 @@ const CartSummary: React.FC<Props> = ({ products }) => {
   return (
     <>
       {products.map((shop: shop) =>
-        shop.products.map((item: Products) => (
-          <div key={item.id} className="card border-0 mb-4 rounded w-150 ">
-            <div className="d-flex justify-content-between ">
-              <div className="d-flex flex-row align-items-center">
-                <div>
-                  <img
-                    src={item.image}
-                    className="img-fluid rounded-3"
-                    alt="Shopping item"
-                    style={{ width: 65 }}
-                  />
+        shop.products.map((item: Products) => {
+          const quantity = qty[item.id] || 1; // Default to 1 if not set
+          return (
+            <div
+              key={item.id}
+              className="card border-0 mb-4 rounded w-100 w-md-150 "
+            >
+              <div className="d-flex justify-content-between align-items-center cart-mobile-view">
+                {/* <div className="d-flex flex-row align-items-between"> */}
+                <img
+                  src={item.image}
+                  className="img-fluid rounded-3 cart-img"
+                  alt="Shopping item"
+                />
+
+                <div className="ms-1 ms-md-3 cart-item-desc">
+                  <h5 className="fs-6">{item.brandName}</h5>
+                  <p className="small ">{item.desc}</p>
+                  {/* </div> */}
                 </div>
-                <div className="ms-3">
-                  <h5>{item.brandName}</h5>
-                  <p className="small mb-0">{item.desc}</p>
-                </div>
-              </div>
-              <div className="d-flex flex-row gap-1 align-items-center">
+                {/* <div className="d-flex flex-row gap-1 align-items-center"> */}
                 <div>
                   <input
                     type="number"
                     className="border-0"
-                    style={{ width: 35 }}
-                    value={qty}
+                    value={quantity}
                     min={1}
                     max={10}
-                    onChange={(e: any) => setQty(e.target.value)}
+                    // onChange={(e: any) => setQty(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      handleQuantityChange(
+                        item.id,
+                        parseInt(e.target.value, 10)
+                      )
+                    }
                   />
                 </div>
-                <div style={{ width: 100 }}>
-                  <h5 className="mb-0">₹{item.price * qty}</h5>
+                <div>
+                  <h5 className="mb-0 ">₹{item.price * quantity}</h5>
                 </div>
                 <MdDeleteOutline
                   size={20}
-                  style={{ width: 20 }}
+                  style={{ width: "5vw" }}
                   onClick={() => handleRemoveItem(item.id)}
                 />
               </div>
             </div>
-          </div>
-        ))
+            // </div>
+          );
+        })
       )}
     </>
   );

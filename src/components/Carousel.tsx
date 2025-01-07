@@ -16,14 +16,14 @@ const Carousel: React.FC<Props> = ({ banner }) => {
       className="carousel slide container "
       data-bs-ride="carousel"
     >
-      <div className="carousel-inner mb-4 border-0 rounded ">
+      <div className="carousel-inner mt-md-4 mb-4 border-0 rounded ">
         {banner.map((item: Banner) => (
           <div key={item.id} className="carousel-item active">
             <img
               src={item.image}
-              className="d-block w-100"
+              className="d-block w-100 carosal-img"
               alt="..."
-              height={500}
+              height={200}
             />
           </div>
         ))}

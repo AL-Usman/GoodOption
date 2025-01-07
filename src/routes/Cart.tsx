@@ -4,11 +4,11 @@ import CartItems from "../components/CartItems";
 const Cart = () => {
   return (
     <section className="h-100 bg-cart">
-      <div className="p-5 h-100">
+      <div className=" p-md-4 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className=" card col-9">
+          <div className=" card col-12 col-md-10 ">
             <div className="card-body ">
-              <div className="row d-flex justify-content-around ">
+              <div className="row d-flex justify-content-between ">
                 <CartItems />
                 <CartPayment />
               </div>
