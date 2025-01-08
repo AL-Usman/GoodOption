@@ -434,7 +434,7 @@ export const fashionProducts1 = [
   {
     id: 34,
     brandName: "Titan",
-    desc: "Titan Raga Analog Rose Gold Dial Women's Watch",
+    desc: "Titan Raga Analog Rose Gold Women's Watch",
     image: "images/fashion/139.webp",
     discount: 15,
     MRP: 5160,

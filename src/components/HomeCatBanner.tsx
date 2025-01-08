@@ -15,7 +15,7 @@ function HomeCatBanner() {
         </div>
         <div className="d-flex justify-content-center align-items-center card mb-4 shadow rounded  border-0 offer-card">
           <div className="col-12 col-md-12">
-            <Link to="/furiture">
+            <Link to="/furniture">
               <img src="images/home/2.webp" className="rounded-2 offer-card" />
             </Link>
           </div>

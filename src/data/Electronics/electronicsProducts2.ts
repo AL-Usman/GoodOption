@@ -15,7 +15,7 @@ export const electronicsProducts2 = [
   {
     id: 2,
     brandName: "Apple",
-    desc: "Apple iPhone 17 Air",
+    desc: "Apple iPhone 160 Pro Max",
     image: "images/electronics/22.webp",
     discount: 15,
     MRP: 109999,
@@ -41,7 +41,7 @@ export const electronicsProducts2 = [
   {
     id: 4,
     brandName: "Samsung",
-    desc: "Rollable Samsung Phone",
+    desc: "Samsung Galaxy Z Fold 6",
     image: "images/electronics/24.webp",
     discount: 20,
     MRP: 89999,
@@ -53,9 +53,9 @@ export const electronicsProducts2 = [
   },
   {
     id: 5,
-    brandName: "Tesla",
-    desc: "Tesla Model Y Juniper",
-    image: "images/electronics/25.webp",
+    brandName: "Iphone",
+    desc: "Iphone 16 Black",
+    image: "images/electronics/40.webp",
     discount: 10,
     MRP: 599990,
     price: 539990,
@@ -93,7 +93,7 @@ export const electronicsProducts2 = [
   {
     id: 8,
     brandName: "Nothing",
-    desc: "Nothing Phone 3",
+    desc: "Nothing Phone 1",
     image: "images/electronics/28.webp",
     discount: 10,
     MRP: 29999,
@@ -145,7 +145,7 @@ export const electronicsProducts2 = [
   {
     id: 12,
     brandName: "Samsung",
-    desc: "Samsung Galaxy S25 Slim Smartphone",
+    desc: "Samsung Galaxy S24 Slim",
     image: "images/electronics/32.webp ",
     discount: 10,
     MRP: 69990,

@@ -2,7 +2,7 @@ export const electronicsProducts3 = [
   {
     id: 1,
     brandName: "Sony",
-    desc: "Sony WH-1000XM6 Noise Cancelling Headphones",
+    desc: "Sony WH-1000XM6 ANC Headphones",
     image: "images/electronics/37.webp",
     discount: 20,
     MRP: 29990,

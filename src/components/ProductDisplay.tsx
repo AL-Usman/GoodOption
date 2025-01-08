@@ -55,7 +55,7 @@ const ProductDisplay: React.FC<Props> = ({ products }) => {
         {products.map((item: Products) => (
           <div
             key={item.id}
-            className="card position-relative border-0 product-card"
+            className="card position-relative border-0 product-card mt-1"
           >
             {item.bestSelling && (
               <span className="badge bg-warning best-seller">Best seller</span>
@@ -85,7 +85,7 @@ const ProductDisplay: React.FC<Props> = ({ products }) => {
                 ) ? (
                   <div>
                     <button
-                      className="btn btn-danger add-to-cart-btn mt-4 rounded-pill "
+                      className="btn btn-danger add-to-cart-btn mt-2 rounded-pill "
                       onClick={() => handleRemoveItem(item.id)}
                     >
                       Remove
@@ -94,7 +94,7 @@ const ProductDisplay: React.FC<Props> = ({ products }) => {
                 ) : (
                   <div>
                     <button
-                      className="btn btn-primary add-to-cart-btn mt-4 rounded-pill "
+                      className="btn btn-primary add-to-cart-btn mt-2 rounded-pill "
                       onClick={() => handleAddToCart(item.shopId, item.id)}
                     >
                       Add

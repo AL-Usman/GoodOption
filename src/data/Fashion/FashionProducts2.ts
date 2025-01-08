@@ -106,7 +106,7 @@ export const fashionProducts2 = [
   {
     id: 9,
     brandName: "Adidas",
-    desc: "Women's Essentials 3-Stripes Golden-Green Leggings",
+    desc: "Women's Essentials Golden-Green Leggings",
     image: "images/fashion/30.webp",
     discount: 20,
     MRP: 2499,
